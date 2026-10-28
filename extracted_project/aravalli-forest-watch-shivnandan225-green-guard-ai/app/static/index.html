@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b15">
+  <meta name="description" content="Walk into a cinematic Aravalli story, learn why the ancient hills matter, and explore a clearly labelled forest-watch prototype.">
+  <title>GreenGuard — The Aravalli Watch</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://upload.wikimedia.org">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main>
+    <section class="journey-screen entry-screen is-visible" id="entry-view" aria-labelledby="entry-title">
+      <div class="entry-backdrop" aria-hidden="true"></div>
+      <header class="entry-header">
+        <a class="identity" href="#" aria-label="GreenGuard home">
+          <span class="identity-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M37.5 10.5C26 10.7 17 14 13.3 22c-2.8 6 0 11.8 5.2 12.5C29 36 35.7 25.4 37.5 10.5Z"/><path d="M9.6 38.8C16.2 29.2 23.4 22 34 16.3"/></svg></span>
+          <span><strong>green<span>guard</span></strong><small>THE ARAVALLI WATCH</small></span>
+        </a>
+        <div class="entry-meta"><span class="authority-seal" aria-hidden="true">✳</span><span>INDEPENDENT ENVIRONMENTAL PROTOTYPE<small>Not an official government service</small></span></div>
+      </header>
+      <div class="entry-copy">
+        <div class="hero-kicker"><span class="hero-rule"></span> THE ARAVALLI · RAJASTHAN, INDIA</div>
+        <h1 id="entry-title">When the hills<br>are <em>heard,</em> life<br>has a future.</h1>
+        <p>Ancient ridgelines. Living forests. One shared responsibility.</p>
+        <button class="entry-cta" id="enter-landscape" type="button">
+          <span class="cta-seal" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M29.5 9.5c-9 .2-16 2.8-18.8 9.1-2.1 4.8.1 9 4 9.4 7.8.8 13.6-7.6 14.8-18.5Z"/><path d="M9 32c5-7 10.3-11.3 18-15"/></svg></span>
+          <span><strong>Step into the Aravalli</strong><small>Begin your 3-part journey <b>→</b></small></span>
+        </button>
+        <div class="entry-note"><span>SCROLL TO FEEL THE LAND</span><span class="scroll-mark">↓</span><span>01 <i>/</i> 03</span></div>
+      </div>
+      <div class="entry-caption"><span class="caption-dot"></span> ARAVALLI LANDSCAPE PHOTOGRAPH · UDAIPUR REGION <a href="https://commons.wikimedia.org/wiki/File:A_view_of_Udaipur_Aravalli_Hills_Rajasthan_India.jpg" target="_blank" rel="noopener noreferrer">TeshTesh · CC BY-SA 4.0</a></div>
+      <div class="entry-vertical">A LANDSCAPE OLDER THAN MEMORY <i>·</i> GUARD IT FOR TOMORROW</div>
+    </section>
+
+    <section class="journey-screen landscape-screen" id="landscape-view" aria-labelledby="landscape-title" hidden>
+      <header class="journey-topbar">
+        <a class="identity identity-small" href="#" data-screen="entry" aria-label="Return to GreenGuard home">
+          <span class="identity-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M37.5 10.5C26 10.7 17 14 13.3 22c-2.8 6 0 11.8 5.2 12.5C29 36 35.7 25.4 37.5 10.5Z"/><path d="M9.6 38.8C16.2 29.2 23.4 22 34 16.3"/></svg></span>
+          <span><strong>green<span>guard</span></strong><small>THE ARAVALLI WATCH</small></span>
+        </a>
+        <div class="journey-progress"><span class="progress-active">01 <i>—</i> ARRIVE</span><b></b><span class="progress-current">02 <i>—</i> UNDERSTAND</span><b></b><span>03 <i>—</i> STAND WATCH</span></div>
+        <button class="text-button" type="button" data-screen="entry">← Back to beginning</button>
+      </header>
+      <div class="landscape-content">
+        <div class="landscape-copy">
+          <div class="hero-kicker"><span class="hero-rule"></span> A LIVING, BREATHING LANDSCAPE</div>
+          <h1 id="landscape-title">The Aravalli<br><em>is more than a view.</em></h1>
+          <p class="landscape-lede">A long, ancient mountain range in north-western India—linking drylands, forests, watersheds, wildlife, and the communities among them.</p>
+          <div class="landscape-fact"><span class="fact-index">01</span><div><strong>Older than the Himalaya</strong><p>The Aravalli is an ancient, deeply eroded range, shaped over geological time.</p></div></div>
+          <div class="landscape-fact"><span class="fact-index">02</span><div><strong>A living mosaic</strong><p>Its habitats vary across a vast range. Wildlife and water conditions differ from one local area to another.</p></div></div>
+          <button class="button button-light" id="enter-watch" type="button">Continue to the forest watch <span>→</span></button>
+          <p class="location-correction">The Aravalli range is in north-west India. This prototype's starting pin is an illustrative location near Udaipur, Rajasthan—not Madhya Pradesh and not a verified forest boundary.</p>
+        </div>
+        <div class="film-frame">
+          <div class="film-media" id="film-media">
+            <img class="film-image is-active" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/A_view_of_Udaipur_Aravalli_Hills_Rajasthan_India.jpg" alt="View of Udaipur and the surrounding Aravalli hills, Rajasthan" referrerpolicy="no-referrer">
+            <img class="film-image" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Rajasthan%2C_Aravalli_range.jpg/1920px-Rajasthan%2C_Aravalli_range.jpg" alt="Aravalli mountain landscape in Rajasthan" loading="lazy" referrerpolicy="no-referrer">
+            <img class="film-image" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Aravalli_Hills_near_Gurgaon.jpg" alt="Aravalli hills near Gurugram, Haryana" loading="lazy" referrerpolicy="no-referrer">
+            <div class="film-wash"></div>
+            <div class="film-title"><span>AN ARAVALLI PHOTO FILM · 90 SECONDS</span><h2>Where the hills<br><em>hold the horizon.</em></h2><small>Udaipur &amp; the Aravalli · credited photographs, not live footage</small></div>
+            <div class="film-story-caption" aria-live="polite"><span id="film-chapter">CHAPTER 01 · THE ANCIENT RIDGELINE</span><p id="film-narration">At first light, the hills are not silent. Wind moves through thorn and grass; birds stitch sound across the ridges. The Aravalli is an ancient range, shaped by time and weather. Each slope carries its own story of stone, soil, and life.</p></div>
+            <div class="film-caption"><span id="film-location">UDAIPUR · RAJASTHAN</span><small id="film-credit">TeshTesh · CC BY-SA 4.0</small></div>
+            <div class="film-controls"><button id="film-prev" type="button" aria-label="Previous landscape photograph">←</button><div class="film-dots" id="film-dots" aria-label="Choose landscape photograph"><button class="is-active" type="button" aria-label="Udaipur Aravalli"></button><button type="button" aria-label="Rajasthan Aravalli"></button><button type="button" aria-label="Gurugram Aravalli"></button></div><button id="film-next" type="button" aria-label="Next landscape photograph">→</button><label class="film-language"><span class="screen-reader-only">Story language</span><select id="film-language"><option value="en-IN">English</option><option value="hi-IN">हिंदी</option></select></label><button id="film-play" class="film-play" type="button" aria-label="Play the 90-second narrated Aravalli story">▶ Play story</button><span id="film-elapsed" class="film-elapsed">00:00 / 01:30</span></div>
+            <div class="film-progress" role="progressbar" aria-label="Story film progress" aria-valuemin="0" aria-valuemax="90" aria-valuenow="0"><span id="film-progress-fill"></span></div>
+          </div>
+          <div class="film-credit-line"><span>90-SECOND CAPTIONED PHOTO FILM · OPTIONAL BROWSER VOICE</span><a id="film-source" href="https://commons.wikimedia.org/wiki/File:A_view_of_Udaipur_Aravalli_Hills_Rajasthan_India.jpg" target="_blank" rel="noopener noreferrer">View image &amp; licence ↗</a></div>
+        </div>
+      </div>
+      <div class="story-rail" aria-label="Explore topics">
+        <button type="button" data-story="wildlife"><span>01</span><b>Wild lives</b><i>→</i></button>
+        <button type="button" data-story="water"><span>02</span><b>Stone &amp; water</b><i>→</i></button>
+        <button type="button" data-story="people"><span>03</span><b>People &amp; place</b><i>→</i></button>
+        <button type="button" data-story="pressure"><span>04</span><b>When hills are lost</b><i>→</i></button>
+      </div>
+    </section>
+
+    <section class="guardian-screen" id="guardian-view" hidden>
+      <aside class="side-rail" id="sidebar">
+        <a class="identity identity-small rail-identity" href="#" data-screen="entry" aria-label="GreenGuard welcome page">
+          <span class="identity-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M37.5 10.5C26 10.7 17 14 13.3 22c-2.8 6 0 11.8 5.2 12.5C29 36 35.7 25.4 37.5 10.5Z"/><path d="M9.6 38.8C16.2 29.2 23.4 22 34 16.3"/></svg></span>
+          <span><strong>green<span>guard</span></strong><small>THE ARAVALLI WATCH</small></span>
+        </a>
+        <div class="rail-location"><span class="rail-label">SELECTED LANDSCAPE</span><strong id="rail-zone-name">Aravalli Hills</strong><small>Udaipur, Rajasthan · demo pin</small></div>
+        <div class="rail-label rail-heading">DISCOVER THE LAND</div>
+        <nav class="rail-nav" aria-label="Aravalli information">
+          <button type="button" data-story="wildlife"><span>⌁</span>Life in the hills<i>↗</i></button>
+          <button type="button" data-story="water"><span>◉</span>Water &amp; drylands<i>↗</i></button>
+          <button type="button" data-story="people"><span>⌂</span>People &amp; place<i>↗</i></button>
+          <button type="button" data-story="pressure"><span>◇</span>If the hills disappear<i>↗</i></button>
+        </nav>
+        <div class="rail-label rail-heading">FOREST GUARDIAN</div>
+        <nav class="rail-nav">
+          <button class="active" type="button" data-scroll="monitor"><span>◎</span>Live watch console</button>
+          <button type="button" data-scroll="map-panel"><span>⌖</span>Map &amp; zones</button>
+          <button type="button" data-scroll="alerts"><span>!</span>Human review queue<b class="rail-count" id="rail-count">0</b></button>
+          <button type="button" data-scroll="authority"><span>✉</span>Officer report</button>
+        </nav>
+        <div class="rail-spacer"></div>
+        <div class="authority-notice"><span class="authority-seal" aria-hidden="true">✳</span><div><strong>Authority channel</strong><small>Not connected · no officer is notified</small></div></div>
+        <button class="rail-back" type="button" data-screen="landscape">← Return to the story</button>
+      </aside>
+
+      <div class="guardian-main">
+        <header class="console-header">
+          <button class="menu-button" id="mobile-menu" type="button" aria-label="Open menu">☰</button>
+          <div class="console-heading"><div class="eyebrow"><span class="live-pip"></span> LANDSCAPE WATCH <i>/</i> FIELD CONSOLE</div><h1 id="monitor">A living landscape. A watchful community.</h1></div>
+          <div class="header-right"><span class="honest-mode"><i></i> DEMO DATA · NO LIVE SENSORS</span><div class="local-time" id="clock">—</div></div>
+        </header>
+        <div class="console-content">
+          <section class="integrity-banner"><span>i</span><p><strong>Honest by design</strong> Only regional weather and map basemaps are live. Camera, satellite-change, wildlife, and illegal-activity detections are <b>not connected</b>. Demo alerts are synthetic.</p><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">Map credits ↗</a></section>
+
+          <section class="live-context" aria-label="Live local context">
+            <div class="context-location"><span class="sun-glyph" id="weather-symbol">◉</span><div><span class="micro-label">REGIONAL WEATHER · OPEN-METEO</span><strong id="weather-location">Near illustrative Aravalli pin</strong><small id="weather-status">Connecting to regional weather model…</small></div></div>
+            <div class="context-value"><strong id="weather-temperature">—</strong><small>TEMPERATURE</small></div>
+            <div class="context-value"><strong id="weather-humidity">—</strong><small>HUMIDITY</small></div>
+            <div class="context-value"><strong id="weather-wind">—</strong><small>WIND</small></div>
+            <a class="weather-credit" href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo ↗</a>
+          </section>
+
+          <section class="monitor-grid">
+            <article class="panel map-panel" id="map-panel">
+              <div class="panel-heading"><div><span class="micro-label">ARAVALLI · UDAIPUR REGION</span><h2>Watch the landscape</h2><p>Map imagery shows geographic context; it is not live satellite video or verified boundary data.</p></div><button class="map-mode" id="map-layer-toggle" type="button">◉ Satellite basemap</button></div>
+              <div class="map-stage"><div id="map" aria-label="Interactive Aravalli demo map"></div><div class="map-overlay"><span class="key-dot key-zone"></span>Illustrative zone <span class="key-dot key-point"></span>Device placeholder <span class="key-dot key-alert"></span>Synthetic alert</div><div class="map-mapnote">Basemap only · imagery capture date varies by tile provider</div></div>
+              <div class="map-bottom"><label class="map-search"><span class="screen-reader-only">Search for a location</span><input id="location-search" type="search" placeholder="Search a place or forest…" maxlength="120"><button class="quiet-action" id="search-button" type="button">Search</button></label><span id="map-coordinates">Click the map to select a point.</span><button class="quiet-action" id="add-zone-button" type="button">＋ Create zone</button><button class="quiet-action" id="add-point-button" type="button">＋ Add point</button><button class="quiet-action" id="location-button" type="button">◎ My location</button></div>
+            </article>
+
+            <article class="panel story-card">
+              <div class="story-card-header"><div><span class="micro-label">WHY THESE HILLS MATTER</span><h2>One range.<br><em>Many lives.</em></h2></div><span class="leaf-emblem">✳</span></div>
+              <p class="story-card-copy">Protecting connected landscapes can help sustain habitat, soils and local water systems. The exact effects vary with each watershed and community.</p>
+              <div class="species-label">WILDLIFE ASSOCIATED WITH PARTS OF THE ARAVALLI <i>not a local sighting</i></div>
+              <div class="species-list"><span>Leopard</span><span>Striped hyena</span><span>Indian peafowl</span><span>Nilgai</span><span>Jackal</span></div>
+              <button class="story-link" type="button" data-story="wildlife">Discover wildlife &amp; habitats <span>↗</span></button>
+              <div class="citation-line">Examples indicate regional association; they do not confirm species at this pin.</div>
+            </article>
+          </section>
+
+          <section class="panel camera-panel" id="camera-monitor">
+            <div class="panel-heading"><div><span class="micro-label">GROUND-LEVEL OBSERVATION · USER CONTROLLED</span><h2>Camera preview</h2><p>Choose a local image or video, or grant camera permission for a private browser preview. No field camera is connected.</p></div><span class="zone-chip"><i></i> LOCAL ONLY</span></div>
+            <div class="camera-workspace">
+              <div class="camera-preview">
+                <div class="camera-placeholder" id="camera-placeholder"><span>⌕</span><strong>No media selected</strong><small>Choose your own video to preview and play it here.</small></div>
+                <img id="image-preview" alt="Locally selected image preview" hidden>
+                <video id="camera-video" playsinline autoplay muted hidden></video>
+              </div>
+              <div class="camera-actions">
+                <label class="button button-secondary upload-button">＋ Choose your image / video<input id="media-upload" type="file" accept="image/*,video/*"></label>
+                <button class="button button-secondary" id="webcam-button" type="button">◎ Start my camera</button>
+                <button class="button button-secondary" id="capture-frame-button" type="button" hidden>Capture local frame</button>
+                <p id="media-result" role="status" aria-live="polite">No media is uploaded or analyzed.</p>
+                <small>Your clip plays in this panel. Maximum 20 MB. Basic file/readability check only—not AI detection. The demo does not save your upload.</small>
+              </div>
+            </div>
+          </section>
+
+          <section class="control-deck" aria-label="Demonstration controls">
+            <div class="control-intro"><span class="micro-label">DEMONSTRATION MODE</span><strong>Walk through an alert—<em>not a real detection.</em></strong><small>Synthetic events land on the map and wait for your review.</small></div>
+            <label class="scenario-field"><span>Choose scenario</span><select id="demo-starting-scenario"><option value="Camera">Camera · motion review</option><option value="Acoustic">Acoustic · sound review</option><option value="Satellite">Satellite · change review</option></select></label>
+            <button class="button button-primary" id="trigger-demo-button" type="button">＋ Create sample alert</button>
+            <button class="button button-secondary" id="start-demo-button" type="button">▶ Run 60-sec story</button>
+            <button class="sound-control" id="sound-toggle" type="button" aria-pressed="false"><span>♫</span><b>Sound off</b><small>Demo tone only</small></button>
+            <div class="demo-run-status" id="demo-run-status" aria-live="polite"><i class="demo-status-dot"></i><span>Ready · no real feeds connected</span></div>
+          </section>
+
+          <section class="panel alert-panel" id="alerts">
+            <div class="panel-heading alert-heading"><div><span class="micro-label">PERSON-LED VERIFICATION</span><h2>Alert &amp; review queue <b id="review-count">0</b></h2><p>Review an illustrative workflow. A reported activity is not a verified event.</p></div><label class="filter-field"><span>Show</span><select id="event-filter"><option value="all">All statuses</option><option value="Pending review">Needs review</option><option value="Verified">Reviewed</option><option value="Dismissed">Dismissed</option></select></label></div>
+            <div class="event-list" id="event-list" aria-live="polite"><div class="empty-events">Loading the demo review queue…</div></div>
+          </section>
+
+          <section class="authority-panel" id="authority">
+            <div class="authority-intro"><span class="authority-symbol" aria-hidden="true">✉</span><span class="micro-label">COMMUNITY REPORTING · PROTOTYPE</span><h2>Witnessed something?<br><em>Make a careful report.</em></h2><p>Share what you personally observed. This prototype stores a report but does not send it to a forest department, police, or any officer.</p><div class="authority-connect"><span class="authority-seal" aria-hidden="true">✳</span><span><strong>No government partnership or reporting channel configured</strong><small>Verify local authority contact details independently before sending information.</small></span></div></div>
+            <form id="report-form" class="report-form">
+              <div class="form-heading"><strong>Prepare an observation report</strong><span>Required fields <i>*</i></span></div>
+              <div class="form-row"><label>What did you observe?<select id="report-type" required><option value="">Select an observation type</option><option>Possible tree cutting</option><option>Possible mining or excavation</option><option>Wildlife concern</option><option>Fire or smoke observed</option><option>Other environmental concern</option></select></label><label>When did you see it?<input id="report-time" type="datetime-local" required></label></div>
+              <div class="form-row"><label>Approximate latitude<input id="report-lat" type="number" min="-90" max="90" step="any" placeholder="e.g. 24.58" required></label><label>Approximate longitude<input id="report-lng" type="number" min="-180" max="180" step="any" placeholder="e.g. 73.68" required></label></div>
+              <label>Nearby place or landmark<input id="report-place" maxlength="120" placeholder="Village, road, range, or nearby landmark" required></label>
+              <label>What did you personally observe?<textarea id="report-description" rows="3" maxlength="1200" placeholder="Describe visible facts only. Avoid guessing motives or identifying people." required></textarea></label>
+              <label>Your email (optional)<input id="report-contact" type="email" maxlength="254" placeholder="Only if you want to be contacted about your report"></label>
+              <label>Verified local forest-office email (optional)<input id="authority-email" type="email" maxlength="254" placeholder="Add an official email you have independently verified"></label>
+              <p class="privacy-note">Do not upload sensitive personal details. The website cannot confirm the incident, protect your identity, or contact emergency services. For an immediate danger, use locally verified official channels.</p>
+              <div class="report-actions"><button class="button button-primary" id="submit-report" type="submit">Save &amp; prepare report</button><button class="button button-secondary" id="export-reports" type="button">↓ Download saved reports</button></div>
+              <div class="report-result" id="report-result" role="status" aria-live="polite"></div>
+            </form>
+          </section>
+
+          <footer class="console-footer"><span>GREENGUARD · AN INDEPENDENT PROTOTYPE</span><span>DEMO LAND BOUNDARY · NO VERIFIED CAMERA/SATELLITE FEEDS · HUMAN REVIEW REQUIRED</span><button type="button" data-screen="entry">Return to welcome ↗</button></footer>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="story-dialog" class="story-dialog" aria-labelledby="story-title">
+    <div class="dialog-top"><div class="hero-kicker"><span class="hero-rule"></span> THE LAND, IN CONTEXT</div><button class="dialog-close" id="story-close" type="button" aria-label="Close story">×</button></div>
+    <span class="dialog-index" id="story-index">01 — KNOW THE LAND</span>
+    <h2 id="story-title">Life in the hills</h2>
+    <p id="story-body"></p>
+    <div class="dialog-caveat" id="story-caveat"></div>
+    <a id="story-source" href="https://en.wikipedia.org/wiki/Aravalli_Range" target="_blank" rel="noopener noreferrer">Read background ↗</a>
+    <button class="button button-light" id="story-next" type="button">Explore next story →</button>
+  </dialog>
+
+  <dialog id="zone-dialog" class="form-dialog">
+    <form method="dialog" id="zone-form"><div class="dialog-top"><div><span class="micro-label">MAP LOCATION</span><h2>Create a monitoring zone</h2></div><button class="dialog-close" type="button" id="close-zone">×</button></div>
+      <p>Choose a named place and select its centre on the map. The default outline is approximate—not an official boundary.</p>
+      <label>Zone name<input id="zone-name" minlength="2" maxlength="80" placeholder="e.g. Udaipur north ridge" required></label>
+      <div class="form-row"><label>Latitude<input id="zone-lat" type="number" min="-90" max="90" step="any" required></label><label>Longitude<input id="zone-lng" type="number" min="-180" max="180" step="any" required></label></div>
+      <label>Load a verified GeoJSON boundary (optional)<input id="geojson-upload" type="file" accept=".geojson,.json,application/geo+json,application/json"></label>
+      <p class="dialog-hint">Supported: GeoJSON Polygon or MultiPolygon. Confirm boundary accuracy and permission before monitoring a real site.</p><p id="zone-error" class="form-error" aria-live="polite"></p>
+      <button class="button button-primary" type="submit">Save illustrative zone</button>
+    </form>
+  </dialog>
+
+  <dialog id="point-dialog" class="form-dialog">
+    <form method="dialog" id="point-form"><div class="dialog-top"><div><span class="micro-label">FIELD EQUIPMENT</span><h2>Add a monitoring point</h2></div><button class="dialog-close" type="button" id="close-point">×</button></div>
+      <p>Click the map to fill GPS coordinates, then describe the physical device you have permission to register.</p>
+      <label>Camera / sensor name<input id="point-name" minlength="2" maxlength="80" placeholder="e.g. Ridge camera 01" required></label>
+      <label>Device type<select id="point-kind"><option value="monitoring">Monitoring location only</option><option value="camera">Camera inventory</option><option value="acoustic">Acoustic sensor inventory</option></select></label>
+      <label>Monitoring zone<select id="point-zone" required></select></label>
+      <div class="form-row"><label>Latitude<input id="point-lat" type="number" min="-90" max="90" step="any" required></label><label>Longitude<input id="point-lng" type="number" min="-180" max="180" step="any" required></label></div>
+      <p class="dialog-hint">Saving a marker does not connect a real camera, sound sensor, or AI detector.</p><p id="point-error" class="form-error" aria-live="polite"></p>
+      <button class="button button-primary" type="submit">Save device marker</button>
+    </form>
+  </dialog>
+
+  <div id="alert-toast" class="alert-toast" role="alert" aria-live="assertive" hidden><span class="toast-symbol">!</span><div><strong>DEMO ALERT · HUMAN REVIEW REQUIRED</strong><p id="alert-toast-text"></p></div><button type="button" id="toast-close" aria-label="Dismiss alert">×</button></div>
+  <div class="screen-reader-only" id="screen-reader-status" role="status" aria-live="polite"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

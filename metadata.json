@@ -1,0 +1,9 @@
+{
+  "name": "GreenGuard — The Aravalli Watch",
+  "description": "Detect early. Alert responsibly. Protect forests. An AI-based forest protection and multi-level escalation system for the ancient Aravalli range in Rajasthan.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
