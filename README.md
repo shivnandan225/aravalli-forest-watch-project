@@ -256,7 +256,7 @@ cp .env.example .env
 npm run dev
 ```
 
-Open **http://localhost:3000** 🎉
+Open (https://aravalli-forest-watch-project.onrender.com/) 🎉
 
 | Variable | Required | Purpose |
 |---|---|---|
